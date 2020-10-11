@@ -1,0 +1,62 @@
+BoxLayout:
+    orientation:'vertical'
+
+    MDToolbar:
+        title: 'Inkspire'
+        get_color_from_hex: 'FFFFF'
+        right_action_items: [['tune', lambda x: print("filter")]]
+        left_action_items:[['magnify', lambda x: print("search")]]
+
+    MDBottomNavigation:
+        #This is a fancy ScreenManager
+        MDBottomNavigationItem:
+            #This is a fancy screen
+            name: 'Home'
+            text: 'Home'
+            icon: 'home'
+            MDLabel:
+                text: 'Home Screen'
+                halign: 'center'
+
+            ScrollView:
+
+                MDGridLayout:
+                    id: homelayout
+                    cols: 1
+                    row_default_height: (self.width - self.cols*self.spacing[0]) / self.cols
+                    row_force_default: True
+                    adaptive_height: True
+                    padding: dp(4), dp(4)
+                    spacing: dp(4)
+
+
+
+
+        MDBottomNavigationItem:
+            name: 'Search'
+            text: 'Search'
+            icon: 'magnify'
+            MDLabel:
+                text: 'Your Profile'
+                halign: 'center'
+        MDBottomNavigationItem:
+            name: 'Project'
+            text: 'project'
+            icon: 'plus-box-outline'
+            MDLabel:
+                text: 'Create Your Project'
+                halign: 'center'
+        MDBottomNavigationItem:
+            name: 'Guide'
+            text: 'Guide'
+            icon: 'notebook'
+            MDLabel:
+                text: 'Guide'
+                halign: 'center'
+        MDBottomNavigationItem:
+            name: 'Profile'
+            text: 'Profile'
+            icon: 'face-recognition'
+            MDLabel:
+                text: 'Your Profile'
+                halign: 'center'
